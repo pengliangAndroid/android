@@ -69,6 +69,7 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
 
             byte[] decodedString = Base64.decode(data, Base64.DEFAULT);
             Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            //view.setScaleType(ImageView.ScaleType.CENTER_CROP);
             view.setImageBitmap(decodedByte);
             return;
           }

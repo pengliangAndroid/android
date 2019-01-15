@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 27);
+/******/ 	return __webpack_require__(__webpack_require__.s = 35);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -21128,29 +21128,40 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 10 */
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(11)
+  __webpack_require__(22)
 }
 var Component = __webpack_require__(3)(
   /* script */
-  __webpack_require__(13),
+  __webpack_require__(24),
   /* template */
-  __webpack_require__(14),
+  __webpack_require__(26),
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-1dbb07f4",
+  "data-v-468e70f8",
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "E:\\东风日产\\poc\\awesome-project\\src\\components\\fixed.vue"
+Component.options.__file = "E:\\东风日产\\poc\\awesome-project\\src\\components\\pocswitch.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] fixed.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] pocswitch.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -21159,9 +21170,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1dbb07f4", Component.options)
+    hotAPI.createRecord("data-v-468e70f8", Component.options)
   } else {
-    hotAPI.reload("data-v-1dbb07f4", Component.options)
+    hotAPI.reload("data-v-468e70f8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -21172,23 +21183,23 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 11 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(12);
+var content = __webpack_require__(23);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("485dda2c", content, false, {});
+var update = __webpack_require__(2)("5aee9f9c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1dbb07f4\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./fixed.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1dbb07f4\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./fixed.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-468e70f8\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./pocswitch.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-468e70f8\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./pocswitch.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -21198,7 +21209,7 @@ if(false) {
 }
 
 /***/ }),
-/* 12 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -21206,21 +21217,62 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* 系统栏固定白色背景，遮住页面内容 */\n.fixed[data-v-1dbb07f4] {\n    position: fixed;\n    background-color: rgba(249, 249, 249, 0.9);\n    /* background-color: #f5f5fa; */\n    width: 750px;\n    top: 0;\n    left: 0;\n}\n", ""]);
+exports.push([module.i, "\n.wx-switch[data-v-468e70f8] {\n    position: relative;\n    width: 115px;\n    height: 64px;\n    border-radius: 64px;\n    border-width: 2px;\n    border-style: solid;\n    border-color: #BBBBBB;\n    background-color: #ffffff;\n}\n.blk[data-v-468e70f8] {\n    position: absolute;\n    left: 0px;\n    top: 5px;\n    z-index: 100;\n    height: 52px;\n    width: 56px;\n    background-color: #ffffff;\n    border-radius: 52px;\n}\n.switch-core[data-v-468e70f8] {\n    position: absolute;\n    width: 110px;\n    height: 60px;\n    background-color: #ffffff;\n    border-radius: 60px;\n}\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 13 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
+
+var _mixins = __webpack_require__(25);
+
+var _mixins2 = _interopRequireDefault(_mixins);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _animation = weex.requireModule('animation'); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21228,47 +21280,207 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'fixed',
-  data: function data() {
-    return {
-      Env: WXEnvironment // 获取设备环境变量
-    };
-  }
+    name: 'pocswitch',
+    mixins: [_mixins2.default],
+    props: {
+        value: {
+            type: Boolean,
+            default: false
+        },
+        disabled: {
+            type: Boolean
+        },
+
+        checkedColor: {
+            type: String,
+            default: '#c3001b'
+        }
+    },
+
+    data: function data() {
+        return {
+            checked: false,
+            blkStyle: {},
+            corestyle: {}
+        };
+    },
+    created: function created() {
+        this.initStyle();
+    },
+
+    watch: {
+        value: function value(newName, oldName) {
+            this.checked = newName;
+            this.blkAnimation(true);
+            this.animation(true);
+        }
+    },
+    mounted: function mounted() {
+        this.checked = this.value;
+        this.blkAnimation(true);
+        this.animation(true);
+    },
+
+
+    methods: {
+        handleClick: function handleClick(e) {
+            this.preventDefault(e);
+            if (this.disabled) return;
+            this.checked = !this.checked;
+            this.animation();
+            this.blkAnimation();
+        },
+        animation: function animation() {
+            var isInit = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+            var el = this.$refs.switchCore;
+            // 设置为0.1 解决奇怪的Y轴会覆盖点击问题
+            var s = this.checked ? '0.1' : '1';
+            _animation.transition(el, {
+                styles: {
+                    transform: 'scale(' + s + ')'
+                },
+                duration: isInit ? 0 : 300,
+                timingFunction: 'linear',
+                needLayout: false,
+                delay: 0
+            });
+        },
+        blkAnimation: function blkAnimation() {
+            var _this = this;
+
+            var isInit = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+            var el = this.$refs.blk;
+            var x = this.checked ? '50px' : '0px';
+            _animation.transition(el, {
+                styles: {
+                    transform: 'translateX(' + x + ')'
+                },
+                duration: isInit ? 0 : 300,
+                timingFunction: 'linear',
+                needLayout: false,
+                delay: 0
+            }, function () {
+                _this.$emit('wxChange', _this.checked);
+                _this.$emit('input', _this.checked);
+            });
+        },
+
+
+        // android不支持阴影
+        initStyle: function initStyle() {
+            var platform = weex.config.env.platform.toLowerCase();
+            if (platform === 'android') {
+                this.blkStyle = {
+                    'border-width': '2px',
+                    'border-style': 'solid',
+                    'border-color': '#BBBBBB'
+                };
+            } else {
+                this.blkStyle = {
+                    'box-shadow': '0 1px 3px rgba(0,0,0,.4)',
+                    top: '5px'
+                };
+                if (platform === 'web') {
+                    this.corestyle = {
+                        width: '100px',
+                        height: '60px',
+                        'border-radius': '60px'
+                    };
+                    this.blkStyle.top = '4px';
+                }
+            }
+        }
+    }
 };
 
 /***/ }),
-/* 14 */
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var width = weex.config.env.deviceWidth;
+var height = weex.config.env.deviceHeight;
+var platform = weex.config.env.platform.toLowerCase();
+var appName = weex.config.env.appName;
+
+var mixins = {
+    data: function data() {
+        return {
+            $env: {
+                isWeb: platform === 'web',
+                isAndroid: platform === 'android',
+                isIos: platform === 'ios'
+            }
+        };
+    },
+
+    methods: {
+        getPageHeight: function getPageHeight() {
+            if (platform === 'android') {
+                return 750 / width * height;
+            }
+            return height;
+        },
+        preventDefault: function preventDefault(e) {
+            e.preventDefault && e.preventDefault();
+            e.stopPropagation && e.stopPropagation();
+        }
+    }
+};
+
+exports.default = mixins;
+
+/***/ }),
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "fixed",
+    staticClass: "wx-switch",
     staticStyle: _vm.$processStyle(undefined),
-    style: (_vm.$processStyle(undefined))
-  })
+    style: (_vm.$processStyle(undefined)),
+    on: {
+      "click": _vm.handleClick
+    }
+  }, [_c('text', {
+    ref: "switchCore",
+    staticClass: "switch-core",
+    staticStyle: _vm.$processStyle(undefined),
+    style: (_vm.$processStyle(_vm.corestyle))
+  }), _vm._v(" "), _c('text', {
+    ref: "blk",
+    staticClass: "blk",
+    staticStyle: _vm.$processStyle(undefined),
+    style: (_vm.$processStyle({
+      'background-color': _vm.checked ? '#C3001B' : '#BBBBBB'
+    }))
+  })])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-1dbb07f4", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-468e70f8", module.exports)
   }
 }
 
 /***/ }),
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21286,7 +21498,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _weexVueRender2.default.init(_vue2.default);
 
-var App = __webpack_require__(10);
+var App = __webpack_require__(21);
 new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ })

@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 58);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -74,14 +74,14 @@ var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(2)
+__vue_styles__.push(__webpack_require__(1)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(3)
+__vue_exports__ = __webpack_require__(2)
 
 /* template */
-var __vue_template__ = __webpack_require__(4)
+var __vue_template__ = __webpack_require__(3)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -113,6 +113,21 @@ module.exports = __vue_exports__
 /***/ }),
 
 /***/ 1:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "fixed": {
+    "position": "fixed",
+    "backgroundColor": "rgba(249,249,249,0.9)",
+    "width": "750",
+    "top": 0,
+    "left": 0
+  }
+}
+
+/***/ }),
+
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -121,86 +136,117 @@ module.exports = __vue_exports__
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-/**
- * navigator 跳转页面公共方法
- */
+//
+//
+//
+//
+//
 
-//  引入navigator模块
-var navigator = weex.requireModule('navigator');
-
-// 封装navigator跳转页面公共方法
-var navigatorPushEvent = exports.navigatorPushEvent = function navigatorPushEvent(jumpPageName, JScallBack) {
-  // const navigatorEvent = (cdnUrl) => {
-  var url = '';
-  // var url = 'http://60.191.59.19:10084/emas-bucket-public/app/hzBankOA-0817/' + jumpPageName + '.js'
-  var picturePath = weex.config.bundleUrl;
-  var arrPath = picturePath.split('/');
-  // 判断设备类型
-  if (weex.config.env.platform === 'iOS') {
-    // iOS设备路径
-    // url = weex.config.bundleUrl.split('/').slice(0,-1).join('/') + '/' + jumpPageName + '.js'
-    var picPath = '';
-    for (var i = 0; i < arrPath.length; i++) {
-      if (i < arrPath.length - 1) {
-        picPath += arrPath[i] + "/";
-      }
-    }
-    url = picPath + jumpPageName + '.js';
-  } else if (weex.config.env.platform === 'android') {
-    // Android设备路径
-    // url = 'LocalAssets_' + jumpPageName + '.js'
-    // url = 'local:///' + jumpPageName + '.js'
-    url = arrPath[0] + arrPath[1] + 'views/' + jumpPageName + '.js';
-  } else {
-    url = arrPath[0] + "/views/" + jumpPageName + ".html";
+exports.default = {
+  name: 'fixed',
+  data: function data() {
+    return {
+      Env: WXEnvironment // 获取设备环境变量
+    };
   }
-  // var url = ''
-
-  // cdn路径
-  // const url = cdnUrl
-
-  // 获取url，开始执行跳转
-  navigator.push({
-    url: url,
-    animated: "true"
-  }, function (event) {
-    JScallBack;
-  });
-};
-
-var navigatorPopEvent = exports.navigatorPopEvent = function navigatorPopEvent(JScallBack) {
-  navigator.pop({ animated: "true" }, function (event) {
-    JScallBack;
-  });
-};
-
-var navigatorPushEventurlNo = exports.navigatorPushEventurlNo = function navigatorPushEventurlNo(urlNo, jumpPageName, JScallBack) {
-  // const navigatorEvent = (cdnUrl) => {
-  var url = '';
-  var url = weex.config.bundleUrl.split('/').slice(0, -2).join('/') + '/' + 'hzBankOA-' + urlNo + '/' + jumpPageName + '.js';
-  // var url = 'http://60.191.59.19:10084/emas-bucket-public/app/hzBankOA-' + urlNo + '/' + jumpPageName + '.js'
-  navigator.push({
-    url: url,
-    animated: "true"
-  }, function (event) {
-    JScallBack;
-  });
 };
 
 /***/ }),
 
-/***/ 10:
+/***/ 3:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["fixed"]
+  })
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 58:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _login = __webpack_require__(59);
+
+var _login2 = _interopRequireDefault(_login);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_login2.default.el = '#root';
+new Vue(_login2.default);
+
+/***/ }),
+
+/***/ 59:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(60)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(61)
+
+/* template */
+var __vue_template__ = __webpack_require__(62)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "E:\\东风日产\\poc\\awesome-project\\src\\views\\login.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-0d169be5"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 60:
 /***/ (function(module, exports) {
 
 module.exports = {
-  "hearder": {
+  "header": {
+    "width": "750",
+    "flexDirection": "row",
+    "justifyContent": "space-between",
+    "backgroundColor": "#ffffff",
+    "paddingBottom": "20",
+    "paddingLeft": "32",
+    "paddingRight": "32",
+    "borderBottomWidth": "1",
+    "borderColor": "#ffffff",
+    "borderStyle": "solid"
+  },
+  "hearderimg": {
     "width": "35",
     "height": "35",
-    "justifyContent": "flex-end",
-    "marginTop": "38",
-    "marginRight": "38",
-    "marginBottom": "38",
-    "marginLeft": "38"
+    "justifyContent": "flex-end"
   },
   "hello": {
     "fontWeight": "bold",
@@ -255,7 +301,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 11:
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -269,12 +315,13 @@ var _fixed = __webpack_require__(0);
 
 var _fixed2 = _interopRequireDefault(_fixed);
 
-var _navigator = __webpack_require__(1);
+var _navigator = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import header from "@/components/header";
 var modal = weex.requireModule('modal'); //
+//
+//
 //
 //
 //
@@ -310,39 +357,40 @@ exports.default = {
         },
         login: function login() {
             var _this = this;
-            //   _this.$router.push({ path:"home"})
-            //   console.log('will jump')
+            if (_this.user === "") {
+                modal.alert({ message: "登录名不能为空" });
+                return;
+            } else if (_this.pwd === "") {
+                modal.alert({ message: "登录密码不能为空" });
+                return;
+            }
             (0, _navigator.navigatorPushEvent)("home");
-            // var str = "66666"
-            // weex.requireModule('event').openCameraFront(JSON.stringify(str),res => {
-            //     // var data = JSON.parse(res)
-            //     debugger;
-            //     // modal.alert({message:res.result});
-            //     modal.alert({message:res.data});
-            //     // ResponsecallBack(data.callbackData)
-            //     _this.user = res.data
-            // })
         }
     }
 };
 
 /***/ }),
 
-/***/ 12:
+/***/ 62:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["background"]
+  }, [_c('div', {
+    staticClass: ["header"],
+    style: {
+      paddingTop: _vm.Env.deviceModel === 'iPhone10,3' ? '116px' : _vm.Env.platform === 'iOS' ? '68px' : '28px'
+    }
   }, [_c('image', {
-    staticClass: ["hearder"],
+    staticClass: ["hearderimg"],
     attrs: {
       "src": _vm.leftIcon
     },
     on: {
       "click": _vm.onClick
     }
-  }), _c('text', {
+  })]), _c('text', {
     staticClass: ["hello"]
   }, [_vm._v("您好,")]), _c('text', {
     staticClass: ["welcome"]
@@ -356,6 +404,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "text",
       "placeholder": "请输入用户名/手机",
+      "maxlength": "20",
+      "autofocus": true,
       "value": (_vm.user)
     },
     on: {
@@ -368,6 +418,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "password",
       "placeholder": "请输入密码",
+      "maxlength": "16",
       "value": (_vm.pwd)
     },
     on: {
@@ -388,22 +439,7 @@ module.exports.render._withStripped = true
 
 /***/ }),
 
-/***/ 2:
-/***/ (function(module, exports) {
-
-module.exports = {
-  "fixed": {
-    "position": "fixed",
-    "backgroundColor": "rgba(249,249,249,0.9)",
-    "width": "750",
-    "top": 0,
-    "left": 0
-  }
-}
-
-/***/ }),
-
-/***/ 3:
+/***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -412,94 +448,71 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
+/**
+ * navigator 跳转页面公共方法
+ */
 
-exports.default = {
-  name: 'fixed',
-  data: function data() {
-    return {
-      Env: WXEnvironment // 获取设备环境变量
-    };
+//  引入navigator模块
+var navigator = weex.requireModule('navigator');
+
+// 封装navigator跳转页面公共方法
+var navigatorPushEvent = exports.navigatorPushEvent = function navigatorPushEvent(jumpPageName, JScallBack) {
+  // const navigatorEvent = (cdnUrl) => {
+  var url = '';
+  // var url = 'http://60.191.59.19:10084/emas-bucket-public/app/hzBankOA-0817/' + jumpPageName + '.js'
+  var picturePath = weex.config.bundleUrl;
+  var arrPath = picturePath.split('/');
+  // 判断设备类型
+  if (weex.config.env.platform === 'iOS') {
+    // iOS设备路径
+    // url = weex.config.bundleUrl.split('/').slice(0,-1).join('/') + '/' + jumpPageName + '.js'
+    var picPath = '';
+    for (var i = 0; i < arrPath.length; i++) {
+      if (i < arrPath.length - 1) {
+        picPath += arrPath[i] + "/";
+      }
+    }
+    url = picPath + jumpPageName + '.js';
+  } else if (weex.config.env.platform === 'android') {
+    // Android设备路径
+    // url = 'LocalAssets_' + jumpPageName + '.js'
+    // url = 'local:///' + jumpPageName + '.js'
+    url = arrPath[0] + "/" + arrPath[1] + "/" + arrPath[2] + '/views/' + jumpPageName + '.js';
+  } else {
+    url = arrPath[0] + "/views/" + jumpPageName + ".html";
   }
+  // var url = ''
+
+  // cdn路径
+  // const url = cdnUrl
+
+  // 获取url，开始执行跳转
+  navigator.push({
+    url: url,
+    animated: "true"
+  }, function (event) {
+    JScallBack;
+  });
 };
 
-/***/ }),
+var navigatorPopEvent = exports.navigatorPopEvent = function navigatorPopEvent(JScallBack) {
+  navigator.pop({ animated: "true" }, function (event) {
+    JScallBack;
+  });
+};
 
-/***/ 39:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _login = __webpack_require__(9);
-
-var _login2 = _interopRequireDefault(_login);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_login2.default.el = '#root';
-new Vue(_login2.default);
-
-/***/ }),
-
-/***/ 4:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["fixed"]
-  })
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(10)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(11)
-
-/* template */
-var __vue_template__ = __webpack_require__(12)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "E:\\东风日产\\poc\\awesome-project\\src\\views\\login.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-0d169be5"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
+var navigatorPushEventurlNo = exports.navigatorPushEventurlNo = function navigatorPushEventurlNo(urlNo, jumpPageName, JScallBack) {
+  // const navigatorEvent = (cdnUrl) => {
+  var url = '';
+  var url = weex.config.bundleUrl.split('/').slice(0, -2).join('/') + '/' + 'hzBankOA-' + urlNo + '/' + jumpPageName + '.js';
+  // var url = 'http://60.191.59.19:10084/emas-bucket-public/app/hzBankOA-' + urlNo + '/' + jumpPageName + '.js'
+  navigator.push({
+    url: url,
+    animated: "true"
+  }, function (event) {
+    JScallBack;
+  });
+};
 
 /***/ })
 

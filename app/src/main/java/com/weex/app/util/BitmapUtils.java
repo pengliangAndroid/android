@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
+import android.util.Base64;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -161,11 +162,29 @@ public class BitmapUtils {
 
         // Delete original file
         if (needsDelete) {
-            File file = new File(imgPath);
-            if (file.exists()) {
-                file.delete();
-            }
+            deleteFile(imgPath);
         }
+    }
+
+    public static void deleteFile(String imgPath) {
+        File file = new File(imgPath);
+        if (file.exists()) {
+            file.delete();
+        }
+    }
+
+    public static String decodeBitmapToBase64(String filePath) throws IOException {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        Bitmap bitmap = BitmapFactory.decodeFile(filePath, options);
+
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,bos);
+        String base64 = Base64.encodeToString(bos.toByteArray(), Base64.DEFAULT);
+        bos.close();
+        bitmap.recycle();
+
+        return base64;
     }
 
     public static void compressAndGenImage(Bitmap image, String outPath, int maxSize) throws IOException {
